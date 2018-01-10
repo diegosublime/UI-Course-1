@@ -1,0 +1,309 @@
+@keyframes change-perspective-buttons {
+  to {
+    transform: scale(1, 1) translate(0px, -15px);
+    text-shadow: 4px 10px 15px black;
+  }
+}
+
+.profile-body {
+  margin: 50px 200px 50px 200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.profile-body .profile-main {
+  flex: 4;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 4em 4em 4em 4em;
+}
+
+.main-title {
+  text-align: center;
+  font-family: Cambria, times;
+  font-size: 1.8em;
+  color: gray;
+}
+
+.main-title b {
+  color: black;
+}
+
+.navigation {
+  background: white;
+  flex: 1;
+}
+
+.navigation p {
+  font-size: 1em;
+  margin: 1em 1em 1.5em 5em;
+  color: #808080;
+}
+
+.navigation li {
+  list-style: none;
+}
+
+.navigation__instruction {
+  font-family: Trebuchet MS;
+}
+
+.navigation__button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0;
+  background-color: white;
+  width: 17em;
+  height: 4em;
+  text-align: left;
+}
+
+.navigation__button:focus {
+  border: 1px solid #C0C0C0;
+  border-radius: 5px;
+  box-shadow: 0 0 9px #DCDCDC;
+}
+
+.navigation__button__icon {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.navigation__button__icon::before {
+  margin: 0em 1em 0em 1em;
+  content: "";
+  display: inline-block;
+  height: 1.1em;
+  width: 1.1em;
+  background-image: url(https://www.sketchapp.com/images/home-2/icon-symbol.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.profile-card {
+  align-self: center;
+  background: linear-gradient(to bottom right, #e60bee, #592597);
+  padding: 10px;
+  width: 15em;
+  height: 15em;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 17% 60% 23%;
+  box-shadow: 0 0 80px #C0C0C0;
+  transition: 0.7s;
+}
+
+.profile-card--image {
+  border-radius: 100%;
+  border-style: solid;
+  border-color: white;
+  width: 5em;
+  height: 5em;
+  align-self: center;
+  margin-bottom: 1em;
+}
+
+.profile-card__header {
+  padding: 5px;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-card__button-menu {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.profile-card--description {
+  color: white;
+}
+
+.profile-card--description__name {
+  font-size: 1em;
+}
+
+.profile-card--description__origin {
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+.profile-card--description__header {
+  text-align: center;
+  margin: 0;
+  font-family: Trebuchet MS;
+}
+
+.profile-card__figure {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profile-card__footer {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.profile-card__footer__property {
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+.profile-card__footer__property strong {
+  font-size: 1.3em;
+  font-weight: bolder;
+}
+
+.profile-card.perspective-3d {
+  transform: perspective(600px) rotateX(38deg) scale(1.1, 1.1);
+}
+
+.profile-card.perspective-3d img {
+  animation-name: float,change-perspective-image;
+  animation-duration: 4s,0.75s;
+  animation-delay: .75s,0s;
+  animation-iteration-count: infinite, 1;
+}
+
+.profile-card.perspective-3d button {
+  animation-name: change-perspective-buttons;
+  animation-fill-mode: forwards;
+  animation-duration: 0.7s;
+}
+
+.profile-card.perspective-3d figcaption {
+  animation-name: change-perspective-buttons;
+  animation-fill-mode: forwards;
+  animation-duration: 0.7s;
+}
+
+.profile-card.perspective-3d footer {
+  animation-name: change-perspective-buttons;
+  animation-fill-mode: forwards;
+  animation-duration: 0.7s;
+}
+
+@keyframes float {
+  0% {
+    transform: scale(1.2, 1.2) translate(0px, -40px);
+  }
+  50% {
+    transform: scale(1.1, 1.1) translate(0px, -35px);
+  }
+  100% {
+    transform: scale(1.2, 1.2) translate(0px, -40px);
+  }
+  from {
+    text-shadow: 0px 10px 45px black;
+    box-shadow: 0px 40px 100px black;
+  }
+  to {
+    text-shadow: 0px 10px 45px black;
+    box-shadow: 0px 40px 100px black;
+  }
+}
+
+@keyframes change-perspective-image {
+  to {
+    transform: scale(1.2, 1.2) translate(0px, -40px);
+    text-shadow: 0px 10px 45px black;
+    box-shadow: 0px 40px 100px black;
+  }
+}
+
+.gear-icon {
+  content: url(https://www.sketchapp.com/images/home-2/symbol-icon-gear.svg);
+}
+
+.pen-icon {
+  content: url(https://www.sketchapp.com/images/home-2/symbol-icon-newmessage.svg);
+}
+
+.description--small {
+  font-size: 0.8em;
+  font-weight: 5;
+  color: #DCDCDC;
+}
+
+.profile-options__label {
+  border-top-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  border-top-right-radius: 1em;
+  border-bottom-left-radius: 1em;
+  display: inline-block;
+  border: 1.4px solid #C0C0C0;
+  background-color: #DCDCDC;
+  width: 3em;
+  height: 1.5em;
+  margin-top: 3em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  transition: 0.4s;
+}
+
+.profile-options__label__check {
+  visibility: hidden;
+  display: none;
+}
+
+.profile-options__label__check:checked + label::before {
+  transform: translate(100%);
+  background-color: #592597;
+}
+
+.profile-options__label__check:checked + label {
+  border-color: #592597;
+  background-color: white;
+}
+
+.profile-options__label:before {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 100%;
+  background-color: #C0C0C0;
+  transition: 0.4s;
+  content: "";
+}
+
+/*  
+main{
+    position: relative;
+}
+main::before{
+    position: absolute;
+    width: 100%;
+    top:50%;
+    height: 0;
+    content:"";
+    transition:all .3s ease;
+}
+main:hover::before{
+    height: 100%;
+    top:0;
+    background-color:rgba(255, 8, 8, 0.5);
+} */
+/* grid - flex - table [justify-content space between] */
+/* [data-status="Active"]{ data attribute
+
+} */
+/*# sourceMappingURL=MainStyle.css.map */

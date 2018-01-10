@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+    <link rel="stylesheet" type="text/css" href="MainStyle.css" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        
+        $(document).ready(function(){ 
+            var perspectiveCheckBox = $("#edit_view_switch");
+            var sidebuttons = $(".navigation__button");   
+            
+            perspectiveCheckBox.on('click',changePerspective);
+ 
+                sidebuttons.each(function(){
+                    this.addEventListener("click",checkPerspectiveCheckBox); 
+                });
+          
+            function changePerspective()
+            { 
+                var elementToChangePerspective = $(".profile-card"); 
+                if(perspectiveCheckBox[0].checked === true)
+                {
+                    elementToChangePerspective.addClass("perspective-3d"); 
+                }
+                else if(elementToChangePerspective[0].classList.contains("perspective-3d"))
+                {
+                    elementToChangePerspective.removeClass("perspective-3d"); 
+                }   
+            } 
+            
+            function checkPerspectiveCheckBox() 
+            { 
+                perspectiveCheckBox[0].checked = true;
+                changePerspective();
+            }
+        });
+        
+    </script>
+        <title>Semantic Example</title>
+    </head>
+    <body class="profile-body">
+        <h1 class="main-title">
+            <b>Combine Symbols and create infinitely.</b>
+            With nested Symbols in Sketch, you can combine symbols together to create reusable, customizable and flexible design elements with ease.
+        </h1> 
+        <aside class="navigation">
+            <p class="navigation__instruction">Interact with the nested Symbols in this example</p>
+            <nav>
+                <ul>
+                    <li><button class="navigation__button" ><span class="navigation__button__icon">Avatar</span></button></li>
+                    <li><button class="navigation__button" ><span class="navigation__button__icon">Background</span></button></li>
+                    <li><button class="navigation__button" ><span class="navigation__button__icon">Top Left Action</span></button></li>
+                    <li><button class="navigation__button" ><span class="navigation__button__icon">Top Right Action</span></button></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="profile-main"> 
+            <article class="profile-card">
+                <header class="profile-card__header">
+                    <button class="profile-card__button-menu"><i class="gear-icon"></i></button>
+                    <button class="profile-card__button-menu"><i class="pen-icon"></i></button> 
+                </header> 
+                <figure class="profile-card__figure">
+                    <img class="profile-card--image" src="https://www.sketchapp.com/images/home-2/05.jpg" />
+                    <figcaption class="profile-card--description">
+                        <h2 class="profile-card--description__name profile-card--description__header">Jeanne Fox</h2>
+                        <h3 class="profile-card--description__origin profile-card--description__header">Akureuri, Iceland</h3>
+                    </figcaption>
+                </figure> 
+                <footer class="profile-card__footer">
+                    <p class="profile-card__footer__property">
+                        <strong>17</strong></br><span class="description--small">Followers</span>
+                    </p> 
+                    <p class="profile-card__footer__property">
+                        <strong>85</strong></br><span class="description--small">Following</span>
+                    </p> 
+                    <p class="profile-card__footer__property">
+                        <strong>13</strong></br><span class="description--small">Check-ins</span>
+                    </p>  
+                </footer> 
+            </article> 
+            <article class="profile-options"> 
+                <input class="profile-options__label__check" id="edit_view_switch" type="checkbox" name="view" value="edit_view" >
+                <label class="profile-options__label" for="edit_view_switch"></label>
+            </article>
+        </main> 
+    </body>
+</html>
